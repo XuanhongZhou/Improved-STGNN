@@ -152,7 +152,6 @@ def train(model, trainX, trainY, valX, valY, mean, std):
         # math.ceil 上取整 1.2->2
         # 计算出多少个batch
         num_batch = math.ceil(num_train / args.batch_size)
-        mae, rmse, mape = res(model, valX, valY, mean, std)
         with tqdm(total=num_batch) as pbar:
             for batch_idx in range(num_batch):
                 # 计算出每个batch对应的数据区间
